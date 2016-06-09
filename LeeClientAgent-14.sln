@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeClientAgent", "vcproj-14\LeeClientAgent.csproj", "{EDD8F3D3-AE6F-4824-9373-C155F25DBC26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeeClientAgent", "csproj-14\LeeClientAgent.csproj", "{EDD8F3D3-AE6F-4824-9373-C155F25DBC26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
