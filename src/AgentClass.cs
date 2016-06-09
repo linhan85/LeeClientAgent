@@ -74,6 +74,12 @@ namespace LeeClientAgent
             if (!Directory.Exists(m_LeeClientDirectory))
                 return false;
 
+            if (!CheckPostion())
+            {
+                MessageBox.Show(null, "请将本程序移动到 LeeClient 的 Utility 目录下才能进行初始化。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
             try
             {
                 FileHelper.CopyDirectory(m_ClientListDirectory + szClientVersion + "\\Basic", m_LeeClientDirectory);
@@ -94,6 +100,12 @@ namespace LeeClientAgent
         {
             try
             {
+                if (!CheckPostion())
+                {
+                    MessageBox.Show(null, "请将本程序移动到 LeeClient 的 Utility 目录下才能正常重置。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+
                 DeleteDirectory(m_LeeClientDirectory + "_tmpEmblem");
                 DeleteDirectory(m_LeeClientDirectory + "memo");
                 DeleteDirectory(m_LeeClientDirectory + "Replay");
@@ -110,6 +122,16 @@ namespace LeeClientAgent
             {
                 return false;
             }
+        }
+
+        private bool CheckPostion()
+        {
+            bool isPass = false;
+
+            isPass = (File.Exists(m_LeeClientDirectory + "cps.dll") &&
+                File.Exists(m_LeeClientDirectory + "aossdk.dll"));
+
+            return isPass;
         }
 
         /// <summary>
