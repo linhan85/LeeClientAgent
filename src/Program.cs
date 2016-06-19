@@ -28,7 +28,7 @@ namespace LeeClientAgent
             if (args.Length > 0)
             {
                 // 如果启动的时候有参数，那么以命令行方式运行此程序
-                Console.WriteLine("");
+                Console.WriteLine("\n");
 
                 CmdProcessor cmd = new CmdProcessor();
                 cmd.Exec(args);

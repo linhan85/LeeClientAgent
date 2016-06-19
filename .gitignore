@@ -6,3 +6,4 @@
 /vcproj-14/obj
 /.vs/LeeClientAgent-14/v14/*.suo
 /csproj-14/obj
+/csproj-14/*.user

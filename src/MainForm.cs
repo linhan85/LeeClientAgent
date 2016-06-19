@@ -14,7 +14,7 @@ namespace LeeClientAgent
     public partial class MainForm : Form
     {
         AgentClass agent = new AgentClass();
-        string baseDirectory = string.Empty;
+        string AppDirectory = string.Empty;
 
         public MainForm()
         {
@@ -23,9 +23,9 @@ namespace LeeClientAgent
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            baseDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\";
-            agent.ClientListDirectory = baseDirectory + "RagexeClient" + "\\";
-            agent.LeeClientDirectory = baseDirectory + "..\\";
+            AppDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\";
+            agent.ClientListDirectory = AppDirectory + "RagexeClient" + "\\";
+            agent.LeeClientDirectory = AppDirectory + "..\\";
 
             ArrayList ClientList = agent.GetClientList();
             ClientListBox.Items.Clear();

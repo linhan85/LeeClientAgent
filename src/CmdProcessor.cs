@@ -9,17 +9,29 @@ namespace LeeClientAgent
     {
         public void Exec(string[] args)
         {
-            Console.WriteLine("Welcome use LeeClient Agent.");
+            //Console.WriteLine("Welcome use LeeClient Agent.");
 
+            // 处理开关参数
             CmdArgs cmdArgs = CmdLine.Parse(args);
             List<string> aloneParams = cmdArgs.Params;
 
             for (int i = 0; i < aloneParams.Count; i++)
             {
                 string commandArgString = cmdArgs.Params[i];
-                Console.WriteLine("Stand-alone: " + commandArgString);
+                //Console.WriteLine("Stand-alone: " + commandArgString);
+
+                switch(commandArgString)
+                {
+                    case "/trans-msgstringtable":
+                        Console.WriteLine("正在请求对 msgstringtable.txt 进行汉化.");
+
+                        TransMsgstringtable trans = new TransMsgstringtable();
+                        trans.Execute();
+                        break;
+                }
             }
 
+            // 处理带值参数
             Dictionary<string, string> argPairs = cmdArgs.ArgPairs;
             List<string> keys = argPairs.Keys.ToList();
 
@@ -28,7 +40,7 @@ namespace LeeClientAgent
                 string strKey = keys[i];
                 string strValue = argPairs[strKey];
 
-                System.Console.WriteLine("Key/Value: " + strKey + "/" + strValue);
+                //System.Console.WriteLine("Key/Value: " + strKey + "/" + strValue);
             }
         }
     }

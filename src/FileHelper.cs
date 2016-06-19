@@ -21,8 +21,11 @@ namespace LeeClientAgent
             {
                 String destName = Path.Combine(destinationPath, fsi.Name);
 
-                if (fsi is System.IO.FileInfo)          //如果是文件，复制文件
-                    File.Copy(fsi.FullName, destName);
+                if (fsi is System.IO.FileInfo)          //如果是文件，复制文件
+                {
+                    if (fsi.FullName.IndexOf("_original") == -1) 
+                        File.Copy(fsi.FullName, destName);
+                }
                 else                                    //如果是文件夹，新建文件夹，递归
                 {
                     Directory.CreateDirectory(destName);
