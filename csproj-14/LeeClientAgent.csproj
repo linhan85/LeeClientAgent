@@ -53,6 +53,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="..\src\Program.cs" />
+    <Compile Include="..\src\CmdProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="..\src\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
